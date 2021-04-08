@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_loggin/src/screens/home.dart';
+import 'package:flutter_loggin/src/screens/reset.dart';
 import 'package:flutter_loggin/src/screens/verify.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -67,7 +68,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 
               },
             )
-          ])
+          ]),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                child: Text('Forgot Password ??'),
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ResetScreen()),
+                ),
+              )
+            ]
+          )
         ],),
     );
   }
